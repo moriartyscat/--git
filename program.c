@@ -322,7 +322,8 @@ int Delete()
     } 
     /*输入写入数据的数量*/
     int Creat_num(void) 
-    {	
+    {	printf(" 	注意：由于技术落后，性别请使用“male”或者“female”进行输入\n");
+        printf("    手机号与QQ号最多仅支持13位输入\n") ;
         printf("\n◎请输入您此次要添加的数据个数:");	
         int n;	
     if(scanf("%d", &n)!=1) 
@@ -361,7 +362,7 @@ int Delete()
         while(a!='1'&&a!='2'&&a!='3'&&a!='4') 
         {		printf("error! please input the right number!\n");		
                 putchar('\a');		
-                getchar();		
+                getchar();
                 printf("◎请重新输入功能前的序号进入相应的工具:【   】\b\b");		
                 a = getchar();	
                 }	
@@ -430,9 +431,10 @@ int Delete()
             printf("║                                            ║\n");	
             printf("║    【3】姓名查询         【6】返回菜单     ║\n");	
             printf("╰══════════════════════╯\n");	
+            printf("成功不是终点，失败也并非永恒，唯有前进的勇气永存！\n");	
+            printf("制作人员预祝您有一个好成绩！\n");
             printf("◎请输入功能前的序号进入相应的工具:【   】\b\b");
-            printf("成功不是终点，失败也并非永恒，唯有前进的勇气永存！");	
-            printf("制作人员预祝您有一个好成绩！");
+            
             int a = 0;	
             a = getchar(); 	
             while(a!='1'&&a!='2'&&a!='3'&&a!='3'&&a!='4'&&a!='5'&&a!='6') 
