@@ -236,12 +236,12 @@ int Delete()
     {WriteData_wb(pt2);		}		
     else if(strcmp(pt2->num,str_num)==0) 
     {	pt1->next = pt2->next;			
-    WriteData_wb(head);		
+        WriteData_wb(head);		
     }		
     pt2 = pt2->next;		
     pt1 = pt1->next;	
     }	
-    if(pt2!=NULL)	
+    if(pt2==NULL)	
     printf("数据库中没有存储您要删除的数据！\n");	
     printf("\n\n");	return 0;} 
 /*【2】修改数据之修改记录*/        
@@ -271,7 +271,7 @@ int Delete()
     pt2 = pt2->next;		
     pt1 = pt1->next;	
     }	
-    if(pt2!=NULL)	
+    if(pt2==NULL)	
     printf("数据库中没有存储您要删除的数据！\n");	
     return 0;
     } 
@@ -322,7 +322,7 @@ int Delete()
     } 
     /*输入写入数据的数量*/
     int Creat_num(void) 
-    {	printf(" 	注意：由于技术落后，性别请使用“male”或者“female”进行输入\n");
+    {	printf("注意：由于技术落后，性别请使用“male”或者“female”进行输入\n");
         printf("    手机号与QQ号最多仅支持13位输入\n") ;
         printf("\n◎请输入您此次要添加的数据个数:");	
         int n;	
@@ -346,7 +346,7 @@ int Delete()
             void menu_inquire(void);	
             void menu_amend(void);	
             printf("              ╭════════╮              \n");	
-            printf("╭══════╣学生管理系统V1.2╠════════════════════╮\n");	
+            printf("╭══════╣学生管理系统V1.3╠════════════════════╮\n");	
             printf("║            ╰════════╯                      ║\n");	
             printf("║   【1】添加数据           【3】修改数据    ║\n");	
             printf("║                                            ║\n");	
@@ -483,11 +483,11 @@ int Delete()
                 switch(a) 
                 {			
                     case '1': Delete();			 
-                    printf("\n\n◎已成功删除指定数据◎\n");			 
+                    printf("\n\n◎指令已完成◎\n");			 
                     system("pause");			 
                     getchar();			break;			
                     case '2': Amend();				 
-                    printf("\n\n◎已成功修改指定数据◎\n");			 
+                    printf("\n\n◎指令已完成◎\n");			 
                     system("pause");				 
                     getchar();			break;			
                     case '3': Neaten();			 
