@@ -236,12 +236,12 @@ int Delete()
     {WriteData_wb(pt2);		}		
     else if(strcmp(pt2->num,str_num)==0) 
     {	pt1->next = pt2->next;			
-    WriteData_wb(head);		
+        WriteData_wb(head);		
     }		
     pt2 = pt2->next;		
     pt1 = pt1->next;	
     }	
-    if(pt2!=NULL)	
+    if(pt2==NULL)	
     printf("数据库中没有存储您要删除的数据！\n");	
     printf("\n\n");	return 0;} 
 /*【2】修改数据之修改记录*/        
@@ -271,7 +271,7 @@ int Delete()
     pt2 = pt2->next;		
     pt1 = pt1->next;	
     }	
-    if(pt2!=NULL)	
+    if(pt2==NULL)	
     printf("数据库中没有存储您要删除的数据！\n");	
     return 0;
     } 
@@ -322,7 +322,7 @@ int Delete()
     } 
     /*输入写入数据的数量*/
     int Creat_num(void) 
-    {	printf(" 	注意：由于技术落后，性别请使用“male”或者“female”进行输入\n");
+    {	printf("注意：由于技术落后，性别请使用“male”或者“female”进行输入\n");
         printf("    手机号与QQ号最多仅支持13位输入\n") ;
         printf("\n◎请输入您此次要添加的数据个数:");	
         int n;	
@@ -346,7 +346,7 @@ int Delete()
             void menu_inquire(void);	
             void menu_amend(void);	
             printf("              ╭════════╮              \n");	
-            printf("╭══════╣学生管理系统V1.2╠════════════════════╮\n");	
+            printf("╭══════╣学生管理系统V1.3╠════════════════════╮\n");	
             printf("║            ╰════════╯                      ║\n");	
             printf("║   【1】添加数据           【3】修改数据    ║\n");	
             printf("║                                            ║\n");	
@@ -355,7 +355,7 @@ int Delete()
             printf("╰═══════════════════════════════════════════╯\n");	
             printf(" 	注意：由于技术落后，性别请使用“male”或者“female”进行输入\n");
             printf("    手机号与QQ号最多仅支持13位输入\n") ;
-            printf("◎请输入功能前的序号进入相应的工具:【   】\b\b");
+            printf("◎请输入功能前的序号进入相应的工具:");
             
            int a = 0;	
            a = getchar(); 	
@@ -363,7 +363,7 @@ int Delete()
         {		printf("error! please input the right number!\n");		
                 putchar('\a');		
                 getchar();
-                printf("◎请重新输入功能前的序号进入相应的工具:【   】\b\b");		
+                printf("◎请重新输入功能前的序号进入相应的工具:");		
                 a = getchar();	
                 }	
         switch(a) 
@@ -386,7 +386,8 @@ int Delete()
                 printf("║ 【1】新建文件 【2】增添数据 【3】返回菜单  ║\n");	
                 printf("║                                         ║\n");	
                 printf("╰════════════════════════════════════════╯\n");	
-                printf("◎请输入功能前的序号进入相应的工具:【   】\b\b"); 	
+                printf("◎请输入功能前的序号进入相应的工具:");
+               	
                 int a = 0;	
                 a = getchar(); 	
                 while(a!='1'&&a!='2'&&a!='3') 
@@ -394,20 +395,19 @@ int Delete()
                     printf("error! please input the right number!\n");		
                     putchar('\a');		
                     getchar();		
-                    printf("◎请重新输入功能前的序号进入相应的工具:【   】\b\b");		
+                    printf("◎请重新输入功能前的序号进入相应的工具:");		
                     a = getchar();	}	
                 switch(a) 
                 {		
                     case '1': WriteData_wb(Creat(Creat_num()));		 
                     printf("\n◎新建文件成功且数据已成功保存◎\n");			 
                     system("pause");		 
-                    		 
-                    menu_add();		break;		
+                    menu();		break;		
                     case '2': WriteData_ab(Creat(Creat_num()));			 
                     printf("\n◎数据已成功添加◎\n");			 
                     system("pause");		 
                     		 
-                    menu_add();		break;		
+                    menu();		break;		
                     case '3': 		 
                     getchar();		 
                     menu();		
@@ -433,7 +433,7 @@ int Delete()
             printf("╰══════════════════════════════════════════════╯\n");	
             printf("成功不是终点，失败也并非永恒，唯有前进的勇气永存！\n");	
             printf("制作人员预祝您有一个好成绩！\n");
-            printf("◎请输入功能前的序号进入相应的工具:【   】\b\b");
+            printf("◎请输入功能前的序号进入相应的工具:");
             
             int a = 0;	
             a = getchar(); 	
@@ -442,7 +442,7 @@ int Delete()
                 printf("error! please input the right number!\n");			
                 putchar('\a');			
                 getchar();			
-                printf("◎请重新输入功能前的序号进入相应的工具:【   】\b\b");			
+                printf("◎请重新输入功能前的序号进入相应的工具:");			
                 a = getchar();		
                 }		
             switch(a) 
@@ -468,7 +468,8 @@ int Delete()
                 printf("║                                            ║\n");	
                 printf("║    【2】修改记录          【4】返回菜单      ║\n");	
                 printf("╰═══════════════════════════════════════════╯\n");	
-                printf("◎请输入功能前的序号进入相应的工具:【   】\b\b"); 	
+                printf("◎请输入功能前的序号进入相应的工具:【   】\n"); 
+                printf("请输入：");	
                 int a = 0;	//将a进行初始化
                 a = getchar(); 	//获取a的值
                 while(a!='1'&&a!='2'&&a!='3'&&a!='4') //输入未给定值时，报错
@@ -476,17 +477,17 @@ int Delete()
                     printf("error! please input the right number!\n");		
                     putchar('\a');		
                     getchar();		
-                    printf("◎请重新输入功能前的序号进入相应的工具:【   】\b\b");		
+                    printf("◎请重新输入功能前的序号进入相应的工具:");		
                     a = getchar();		
                     }		
                 switch(a) 
                 {			
                     case '1': Delete();			 
-                    printf("\n\n◎已成功删除指定数据◎\n");			 
+                    printf("\n\n◎指令已完成◎\n");			 
                     system("pause");			 
                     getchar();			break;			
                     case '2': Amend();				 
-                    printf("\n\n◎已成功修改指定数据◎\n");			 
+                    printf("\n\n◎指令已完成◎\n");			 
                     system("pause");				 
                     getchar();			break;			
                     case '3': Neaten();			 
